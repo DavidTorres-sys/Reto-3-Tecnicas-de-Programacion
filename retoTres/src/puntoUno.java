@@ -6,8 +6,10 @@ public class puntoUno {
   public static void main(String[] args){
     Scanner input = new Scanner (System.in);
 
-    float  sumaNotas = 0;
-    float  promedioNotas = 0;
+    float sumaNotas = 0;
+    float promedioNotas;
+    float notaMayor = 0;
+    //-------------- Pregunta Array ----------//
     int nArray = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de notas a subir"));
     float [] nota = new float [nArray];
 
@@ -18,13 +20,33 @@ public class puntoUno {
     }
     System.out.println("Notas: " + Arrays.toString(nota));
 
-    for(int k = 0; k < nArray; k++){
+    //-------------- Mayor nota -------------------------//
+    for(int x = 0; x < nArray; x++) {
+      if (nota[x] > notaMayor) {
+        notaMayor = nota[x];
+      }
+    }
+    System.out.println("La mayor nota es: " + notaMayor);
+    //------------ Menor nota ------------------------//
+    float notaMenor = nota[0];
+    for(int x = 0; x < nArray; x++) {
+      if (nota[x] < notaMenor) {
+        notaMenor = nota[x];
+      }
+    }
+    System.out.println("La menor nota es: " + notaMenor);
+    //------------ Promedio notas -----------------------//
+    for(int k = 0; k < nArray; k++) {
       sumaNotas += nota[k];
     }
-    System.out.println("Suma notas: " + sumaNotas);
-
     promedioNotas = sumaNotas / nArray;
     System.out.println("Promedio Notas: " + promedioNotas);
+    if(promedioNotas >= 3){
+      System.out.println("Aprobó la materia");
+    }
+    else {
+      System.out.println("Reprobó la materia ");
+    }
   }
 }
 
