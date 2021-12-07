@@ -2,7 +2,7 @@ import javax.swing.JOptionPane;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class puntoUno {
+public class PuntoUno {
   public static void main(String[] args) {
     Scanner input = new Scanner (System.in);
 
@@ -14,11 +14,21 @@ public class puntoUno {
     float [] nota = new float [nArray];
 
     System.out.println("Ingrese la(s) nota(s)");
-      for (int i = 0; i < nArray; i++) {
-        System.out.print((i + 1) + ". nota:");
-        nota[i] = input.nextFloat();
+    for(int k = 0; k < nArray; k++) {
+      if (nota[k] <= 5) {
+        for (int i = 0; i < nArray; i++) {
+          System.out.print((i + 1) + ". nota:");
+          nota[i] = input.nextFloat();
+        }
       }
+      else {
+        System.out.println("Error!");
+        break;
+      }
+    }
     System.out.println("Notas: " + Arrays.toString(nota));
+
+
 
     //-------------- Mayor nota -------------------------//
     for(int x = 0; x < nArray; x++) {
