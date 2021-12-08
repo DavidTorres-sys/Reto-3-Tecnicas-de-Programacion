@@ -11,7 +11,6 @@ public class PuntoDos {
     int n1 = input.nextInt();
 
     int[][] matrixA = new int[m1][n1];
-    ;
 
     for (int i = 0; i < m1; i++) {
       for (int j = 0; j < n1; j++) {
@@ -37,5 +36,16 @@ public class PuntoDos {
     System.out.println(Arrays.deepToString(matrixA));
     System.out.println(Arrays.deepToString(matrixB));
     //-----------------Producto punto --------------------//
+    int matrixResultado[][] = new int[matrixB.length][matrixB[0].length];
+    for(int i = 0; i < matrixA.length; i++) {
+      for(int j = 0; j < matrixB[0].length; j++) {
+        for(int k = 0; k < matrixA[0].length; k++) {
+          matrixResultado[i][j] += (matrixA[i][k] * matrixB[k][j]);
+        }
+
+      }
+    }
+    System.out.println("Resultado");
+    System.out.println(Arrays.deepToString(matrixResultado));
   }
 }
