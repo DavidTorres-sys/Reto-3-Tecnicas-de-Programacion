@@ -28,8 +28,6 @@ public class PuntoUno {
     }
     System.out.println("Notas: " + Arrays.toString(nota));
 
-
-
     //-------------- Mayor nota -------------------------//
     for(int x = 0; x < nArray; x++) {
       if (nota[x] > notaMayor) {
