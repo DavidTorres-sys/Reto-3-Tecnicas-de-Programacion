@@ -14,17 +14,9 @@ public class PuntoUno {
     float [] nota = new float [nArray];
 
     System.out.println("Ingrese la(s) nota(s)");
-    for(int k = 0; k < nArray; k++) {
-      if (nota[k] <= 5) {
-        for (int i = 0; i < nArray; i++) {
-          System.out.print((i + 1) + ". nota:");
-          nota[i] = input.nextFloat();
-        }
-      }
-      else {
-        System.out.println("Error!");
-        break;
-      }
+    for (int i = 0; i < nArray; i++) {
+      System.out.print((i + 1) + ". nota:");
+      nota[i] = input.nextFloat();
     }
     System.out.println("Notas: " + Arrays.toString(nota));
 
@@ -59,4 +51,3 @@ public class PuntoUno {
     }
   }
 }
-

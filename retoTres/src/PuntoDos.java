@@ -1,32 +1,41 @@
-import javax.swing.*;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class PuntoDos {
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
+    //------------primera matrix -----------//
+    System.out.print("Ingrese el tamaño n:");
+    int m1 = input.nextInt();
+    System.out.print("Ingrese el tamaño m:");
+    int n1 = input.nextInt();
 
-    int productoEscalar = 0;
-    int i;
+    int[][] matrixA = new int[m1][n1];
+    ;
 
-    System.out.print("Ingrese el valor de n:");
-    i = input.nextInt();
+    for (int i = 0; i < m1; i++) {
+      for (int j = 0; j < n1; j++) {
+        System.out.print("A[" + i + "][" + j + "]= ");
+        matrixA[i][j] = input.nextInt();
+      }
+    }
+    //---------------- Segunda matrix ---------------//
+    System.out.print("Ingrese el tamaño n:");
+    int m2 = input.nextInt();
+    System.out.print("Ingrese el tamaño m:");
+    int n2 = input.nextInt();
 
-    int [] m = new int [i];
-    int [] n = new int [i];
+    int[][] matrixB = new int[m2][n2];
 
-    for(int k = 0; k < i; k++){
-      m[k] = (int) (Math.random() * 101);
-      n[k] = (int) (Math.random() * 101);
+    for (int i = 0; i < m2; i++) {
+      for (int j = 0; j < n2; j++) {
+        System.out.print("A[" + i + "][" + j + "]= ");
+        matrixB[i][j] = input.nextInt();
+      }
     }
-    for(int k = 0; k < i; k++) {
-      System.out.println(m[k]);
-    }
-    for(int k = 0; k < i; k++) {
-      System.out.println(n[k]);
-    }
-    for(int k = 0; k < i; k++) {
-      productoEscalar =  productoEscalar + n[k] * m[k];
-    }
-    System.out.println(productoEscalar);
+    //-----------------Mostrar matrices ----------------//
+    System.out.println(Arrays.deepToString(matrixA));
+    System.out.println(Arrays.deepToString(matrixB));
+    //-----------------Producto punto --------------------//
   }
 }
