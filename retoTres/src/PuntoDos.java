@@ -4,51 +4,35 @@ import java.util.Scanner;
 public class PuntoDos {
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
-    //------------primera matrix -----------//
-    System.out.print("Ingrese el tamaño n:");
+    //------------primer Vector -----------//
+    System.out.print("Ingrese el tamaño del vector A:");
     int m1 = input.nextInt();
-    System.out.print("Ingrese el tamaño m:");
-    int n1 = input.nextInt();
 
-    int[][] matrixA = new int[m1][n1];
+  int[] vectorA = new int[m1];
 
     for (int i = 0; i < m1; i++) {
-      for (int j = 0; j < n1; j++) {
-        System.out.print("A[" + i + "][" + j + "]= ");
-        matrixA[i][j] = input.nextInt();
-      }
+      System.out.print("A[" + (i + 1) + "] = ");
+      vectorA[i] = input.nextInt();
     }
-    //---------------- Segunda matrix ---------------//
-    System.out.print("Ingrese el tamaño n:");
+    //---------------- Segundo Vector--------------//
+    System.out.print("Ingrese el tamaño del vector B:");
     int m2 = input.nextInt();
-    System.out.print("Ingrese el tamaño m:");
-    int n2 = input.nextInt();
 
-    int[][] matrixB = new int[m2][n2];
+    int[] vectorB = new int[m2];
 
     for (int i = 0; i < m2; i++) {
-      for (int j = 0; j < n2; j++) {
-        System.out.print("A[" + i + "][" + j + "]= ");
-        matrixB[i][j] = input.nextInt();
-      }
+      System.out.print("A[" + (i + 1) + "] = ");
+      vectorB[i] = input.nextInt();
     }
-    //-----------------Mostrar matrices ----------------//
-    System.out.println("Matrix A");
-    System.out.println(Arrays.deepToString(matrixA));
+    //-----------------Mostrar Vcctor ----------------//
+    System.out.println("Vector A " + Arrays.toString(vectorA));
 
-    System.out.println("Matrix B");
-    System.out.println(Arrays.deepToString(matrixB) + "\n");
-    //-----------------Producto punto --------------------//
-    int matrixResultado[][] = new int[matrixB.length][matrixB[0].length];
-    for(int i = 0; i < matrixA.length; i++) {
-      for(int j = 0; j < matrixB[0].length; j++) {
-        for(int k = 0; k < matrixA[0].length; k++) {
-          matrixResultado[i][j] += (matrixA[i][k] * matrixB[k][j]);
-        }
-
-      }
+    System.out.println("Vector B " + Arrays.toString(vectorB));
+    //-----------------Producto --------------------//
+    int vectorResultado = 0;
+    for(int i = 0; i < vectorA.length; i++) {
+      vectorResultado += (vectorA[i] * vectorB[i]);
     }
-    System.out.println("Resultado");
-    System.out.println(Arrays.deepToString(matrixResultado));
+    System.out.println("Resultado: " + vectorResultado);
   }
 }

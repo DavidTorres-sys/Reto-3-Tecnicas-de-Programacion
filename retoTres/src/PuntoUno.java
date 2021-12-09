@@ -19,35 +19,42 @@ public class PuntoUno {
       nota[i] = input.nextFloat();
     }
     System.out.println("Notas: " + Arrays.toString(nota));
+    for(int i = 0; i < nArray; i++) {
+      if ((nota[i] <= 5) && (nota[i] >= 0)) {
+        //-------------- Mayor nota -------------------------//
+        for (int x = 0; x < nArray; x++) {
+          if (nota[x] > notaMayor) {
+            notaMayor = nota[x];
+          }
+        }
+        System.out.println("La mayor nota es: " + notaMayor);
 
-    //-------------- Mayor nota -------------------------//
-    for(int x = 0; x < nArray; x++) {
-      if (nota[x] > notaMayor) {
-        notaMayor = nota[x];
+        //------------ Menor nota ------------------------//
+        float notaMenor = nota[0];
+        for (int x = 0; x < nArray; x++) {
+          if (nota[x] < notaMenor) {
+            notaMenor = nota[x];
+          }
+        }
+        System.out.println("La menor nota es: " + notaMenor);
+
+        //------------ Promedio notas -----------------------//
+        for (int k = 0; k < nArray; k++) {
+          sumaNotas += nota[k];
+        }
+        promedioNotas = sumaNotas / nArray;
+        System.out.println("Promedio Notas: " + promedioNotas);
+        if (promedioNotas >= 3) {
+          System.out.println("Aprobó la materia");
+        } else {
+          System.out.println("Reprobó la materia ");
+        }
+        break;
       }
-    }
-    System.out.println("La mayor nota es: " + notaMayor);
-
-    //------------ Menor nota ------------------------//
-    float notaMenor = nota[0];
-    for(int x = 0; x < nArray; x++) {
-      if (nota[x] < notaMenor) {
-        notaMenor = nota[x];
+      else {
+        System.out.println("Error!");
+        break;
       }
-    }
-    System.out.println("La menor nota es: " + notaMenor);
-
-    //------------ Promedio notas -----------------------//
-    for(int k = 0; k < nArray; k++) {
-      sumaNotas += nota[k];
-    }
-    promedioNotas = sumaNotas / nArray;
-    System.out.println("Promedio Notas: " + promedioNotas);
-    if(promedioNotas >= 3){
-      System.out.println("Aprobó la materia");
-    }
-    else {
-      System.out.println("Reprobó la materia ");
     }
   }
 }
