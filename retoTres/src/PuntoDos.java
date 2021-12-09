@@ -33,8 +33,11 @@ public class PuntoDos {
       }
     }
     //-----------------Mostrar matrices ----------------//
+    System.out.println("Matrix A");
     System.out.println(Arrays.deepToString(matrixA));
-    System.out.println(Arrays.deepToString(matrixB));
+
+    System.out.println("Matrix B");
+    System.out.println(Arrays.deepToString(matrixB) + "\n");
     //-----------------Producto punto --------------------//
     int matrixResultado[][] = new int[matrixB.length][matrixB[0].length];
     for(int i = 0; i < matrixA.length; i++) {
